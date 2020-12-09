@@ -1,0 +1,53 @@
+<br/>
+<mat-table [dataSource]="tableSource" matSort id="contentToConvert">
+
+
+  <ng-container matColumnDef="categoryId">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Category Id </mat-header-cell>
+    <mat-cell *matCellDef="let elem"> {{elem.categoryId}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let elem"> {{elem.name}} </mat-cell>
+  </ng-container>
+  
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+<mat-paginator [pageSizeOptions]="[3,5,7, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div *ngIf="countries?.length>0">
+<table>
+  <tr *ngFor="let obj of countries">
+    <td>{{obj.name}}</td>
+    <td>{{obj.population}}</td>
+    <td>{{obj.nativeName}}</td>
+    <td>{{obj.area}}</td>
+    <td>{{obj.capital}}</td>
+  </tr>
+</table>
+</div>
+-->
+
+
