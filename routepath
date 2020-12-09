@@ -1,0 +1,65 @@
+const routes: Routes = [
+
+  {
+    path:'Category',
+    component:CategoryComponent,
+    children:[{
+      path:'CategoryAdd',
+      component:CategoryAddComponent
+    },
+      {
+        path:'CategoryEdit',
+        component:CategoryEditComponent
+      } ,
+      {
+        path:'CategoryDelete',
+        component:CategoryDeleteComponent
+      },
+      {
+        path:'CategoryView',
+        component:CategoryViewComponent
+      },
+      {
+        path:'CategoryViewAll',
+        component:CategoryViewAllComponent
+      }
+
+    ]
+  },
+    {
+      path:'Product',
+      component:ProductComponent,
+      children:[{
+        path:'ProductAdd',
+        component:ProductAddComponent
+      },
+        {
+          path:'ProductEdit',
+          component:ProductEditComponent
+        } ,
+        {
+          path:'ProductDelete',
+          component:ProductDeleteComponent
+        },
+        {
+          path:'ProductView',
+          component:ProductViewComponent
+        },
+        {
+          path:'ProductViewAll',
+          component:ProductViewAllComponent
+        }
+
+      ]
+    },
+
+    {
+      path:"Account",
+      component: AccountComponent
+    },
+    {
+      path: 'Shipping',
+      component: ShippingComponent
+    }
+
+];
