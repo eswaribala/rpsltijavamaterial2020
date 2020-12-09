@@ -1,0 +1,82 @@
+<form [formGroup]="categoryForm" (ngSubmit)="save()"  class="categoryForm">
+  <fieldset>
+    <legend>Category Details</legend>
+    <mat-form-field class="mat-form-field">
+      <mat-placeholder>
+        <mat-icon>
+
+        </mat-icon>
+        Garments
+      </mat-placeholder>
+
+      <input type="text" matInput [formControl]="categoryName">
+      <div [hidden]="categoryName.valid" class="validation">
+        <div [hidden]="!categoryName.hasError('required')">
+          **Must enter Category Name**
+        </div>
+        <div [hidden]="!categoryName.hasError('pattern')">
+          **Category Name must be between 3 to 20**
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+      <mat-placeholder>
+        <mat-icon>
+
+        </mat-icon>
+        Shirt
+      </mat-placeholder>
+
+      <input type="text" matInput [formControl]="productName">
+      <div [hidden]="productName.valid" class="validation">
+        <div [hidden]="!productName.hasError('required')">
+          **Must enter Product Name**
+        </div>
+        <div [hidden]="!productName.hasError('pattern')">
+          **Product Name must be between 3 to 20**
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+      <mat-placeholder>
+        <mat-icon>
+
+        </mat-icon>
+        2020/12/01
+      </mat-placeholder>
+
+      <input type="date" matInput [formControl]="dop">
+      <div [hidden]="dop.valid" class="validation">
+        <div [hidden]="!dop.hasError('required')">
+          **Must enter DOP**
+        </div>
+
+      </div>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+      <mat-placeholder>
+        <mat-icon>
+
+        </mat-icon>
+        32487
+      </mat-placeholder>
+
+      <input type="number" matInput [formControl]="cost">
+      <div [hidden]="cost.valid" class="validation">
+        <div [hidden]="!cost.hasError('required')">
+          **Must enter COST**
+        </div>
+
+      </div>
+    </mat-form-field>
+  </fieldset>
+  <button mat-fab type="submit" color="primary" [disabled]="!categoryForm.valid" >
+    <mat-icon>lock_open</mat-icon>
+  </button>
+  <button mat-fab type="reset" color="warn" [disabled]="!categoryForm.valid" >
+    <mat-icon>lock_open</mat-icon>
+  </button>
+
+
+
+</form>

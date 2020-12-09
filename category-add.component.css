@@ -1,0 +1,44 @@
+.categoryForm
+{
+  width:120%;
+  margin-top: 5%;
+  background-color: lightblue;
+  border: 2px solid blue;
+
+}
+.categoryForm fieldset
+{
+
+  padding:10%
+
+
+}
+.categoryForm fieldset legend
+{
+  text-align: center;
+}
+
+
+.validation
+{
+  color: orangered;
+}
+.mat-form-field
+{
+
+  margin-right: 18%;
+
+}
+.categoryForm button[type=submit]
+{
+  width:20%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  margin-right: 25%;
+}
+.categoryForm button[type=reset]
+{
+  width:20%;
+  margin-bottom: 2%;
+
+}
