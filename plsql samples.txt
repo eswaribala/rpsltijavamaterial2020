@@ -12,3 +12,13 @@ BEGIN
 DBMS_OUTPUT.PUT_LINE(num_tables);
 END;
 /
+-----------------------------------------------------------
+VARIABLE 	g_salary NUMBER
+BEGIN
+   SELECT	salary
+   INTO	:g_salary 
+   FROM	EMP
+   WHERE	empno = 10;  
+END;
+/
+PRINT g_salary
