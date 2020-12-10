@@ -22,3 +22,23 @@ BEGIN
 END;
 /
 PRINT g_salary
+----------------------------------------------
+create or replace 
+Procedure TraderCursorProc2020 IS
+ v_traderId Trader.TraderId%TYPE;
+ v_name	 Trader.Name%TYPE;
+ v_tradinglimit  Trader.TradingLimit%TYPE;
+ v_location Trader.Location%TYPE;
+ CURSOR trader_cursor IS
+        SELECT TraderId,Name,TradingLimit,Location FROM Trader;
+ BEGIN
+    OPEN trader_cursor;
+      LOOP
+        FETCH trader_cursor INTO v_traderId, v_name,v_tradinglimit,v_location;
+        EXIT WHEN trader_cursor%ROWCOUNT > 3 OR  
+                          trader_cursor%NOTFOUND;        
+        DBMS_OUTPUT.PUT_LINE (TO_CHAR(v_traderId) 
+                              ||'	'|| v_name);
+      END LOOP;
+    CLOSE trader_cursor;
+END ;
