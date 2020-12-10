@@ -60,3 +60,19 @@ DECLARE
 15 ('Grade ' || grade || ' is ' || appraisal);
 16 END;
 17 /
+-----------------------------------
+Create or Replace Procedure Trader_Composite IS
+TYPE trader_table_type is table of Trader%ROWTYPE INDEX BY BINARY_INTEGER;
+trader_table  trader_table_type;
+v_count       INTEGER:= 3; 
+BEGIN
+  FOR i IN 1..v_count
+  LOOP
+	  SELECT * INTO trader_table(i) FROM Trader
+	  WHERE TraderId = i;
+  END LOOP;
+  FOR i IN trader_table.FIRST..trader_table.LAST 
+  LOOP
+     DBMS_OUTPUT.PUT_LINE(trader_table(i).Name);
+  END LOOP;
+END; 
