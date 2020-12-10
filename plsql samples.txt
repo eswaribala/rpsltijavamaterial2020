@@ -42,3 +42,21 @@ Procedure TraderCursorProc2020 IS
       END LOOP;
     CLOSE trader_cursor;
 END ;
+------------------------------------------------
+DECLARE
+2 grade CHAR(1) := 'B';
+3 appraisal VARCHAR2(20);
+4 BEGIN
+5 appraisal :=
+6 CASE grade
+7 WHEN 'A' THEN 'Excellent'
+8 WHEN 'B' THEN 'Very Good'
+9 WHEN 'C' THEN 'Good'
+10 WHEN 'D' THEN 'Fair'
+11 WHEN 'F' THEN 'Poor'
+12 ELSE 'No such grade'
+13 END;
+14 DBMS_OUTPUT.PUT_LINE
+15 ('Grade ' || grade || ' is ' || appraisal);
+16 END;
+17 /
